@@ -23,4 +23,4 @@ RUN npm install
 
 RUN cd ../
 
-CMD ["npx","sst","deploy","--stage","prod"]
+CMD ["npm","deploy"]
