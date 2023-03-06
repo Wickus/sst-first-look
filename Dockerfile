@@ -23,4 +23,4 @@ RUN npm install
 
 RUN cd ../
 
-CMD ["npm","deploy"]
+CMD ["npm","run","deploy"]
