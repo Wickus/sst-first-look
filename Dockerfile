@@ -19,7 +19,11 @@ COPY . /app/
 
 RUN cd ./frontend
 
+COPY package.json /app/frontend/
+
 RUN npm install
+
+COPY . /app/frontend/
 
 RUN cd ../
 
