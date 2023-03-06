@@ -41,10 +41,13 @@ jobs:
           aws-region: eu-west-1
 
       - name: Install SST NPM packages
-        run: npm install
+        run: docker build \                                                                       ─╯
+            --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+            --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+            -t sst:latest .
 
-      - name: Install Next js Packages
-        run: cd ./frontend && npm install
-
-      - name: Deploy SST App
-        run: npx sst deploy --stage staging
+      - name: Running the Docker file
+        run: docker run \
+            -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+            -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+            sst:latest
