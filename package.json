@@ -6,7 +6,7 @@
   "scripts": {
     "start": "sst start",
     "dev": "sst dev",
-    "build": "sst build",
+    "build": "sst build --stage prod",
     "deploy": "sst deploy --stage prod",
     "remove": "sst remove",
     "console": "sst console",
