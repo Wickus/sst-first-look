@@ -44,4 +44,4 @@ jobs:
         run: npm i && cd frontend && npm i
 
       - name: Deploy SST App
-        run: npm run deploy --stage staging
+        run: npx sst deploy --stage staging
