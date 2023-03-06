@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 18.x
 
       - uses: actions/cache@v3
         id: npm-cache
@@ -40,8 +40,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
 
-      - name: Install NPM packages
-        run: npm i && cd frontend && npm i
+      - name: Install SST NPM packages
+        run: npm install
+
+      - name: Install Next js Packages
+        run: cd ./frontend && npm install
 
       - name: Deploy SST App
         run: npx sst deploy --stage staging
