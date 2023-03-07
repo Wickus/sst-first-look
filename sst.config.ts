@@ -5,7 +5,7 @@ import {StorageStack} from "./stacks/SorageStack";
 export default {
     config(_input) {
         return {
-            name: "next-js-app",
+            name: "nextjs-app",
             region: "us-east-1",
         };
     },
