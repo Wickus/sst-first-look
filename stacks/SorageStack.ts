@@ -1,6 +1,6 @@
 import {Bucket, StackContext} from "sst/constructs";
 
-export function SorageStack({stack}: StackContext) {
+export function StorageStack({stack}: StackContext) {
     // Create a Next.js site
     const bucket = new Bucket(stack, "Uploads")
 

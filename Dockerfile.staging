@@ -24,4 +24,4 @@ RUN npm install
 
 WORKDIR /app/
 
-CMD ["npm", "run", "deploy"]
+CMD ["npm", "run", "deploy-staging"]

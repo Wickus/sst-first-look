@@ -1,15 +1,15 @@
 import {SSTConfig} from "sst";
 import {WebsiteStack} from "./stacks/WebsiteStack"
-import {SorageStack} from "./stacks/SorageStack";
+import {StorageStack} from "./stacks/SorageStack";
 
 export default {
     config(_input) {
         return {
-            name: "nextjs-app",
-            region: "us-east-1",
+            name: "next-js-app",
+            region: "us-east-2",
         };
     },
     stacks(app) {
-        app.stack(WebsiteStack).stack(SorageStack)
+        app.stack(WebsiteStack).stack(StorageStack)
     },
 } satisfies SSTConfig;

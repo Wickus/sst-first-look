@@ -2,5 +2,9 @@
   "hosted-zone:account=554934907258:domainName=ngenstudios.com:region=us-east-1": {
     "Id": "/hostedzone/Z02855452W8AXTESZI6N4",
     "Name": "ngenstudios.com."
+  },
+  "hosted-zone:account=554934907258:domainName=ngenstudios.com:region=us-east-2": {
+    "Id": "/hostedzone/Z02855452W8AXTESZI6N4",
+    "Name": "ngenstudios.com."
   }
 }

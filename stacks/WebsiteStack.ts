@@ -13,6 +13,10 @@ export function WebsiteStack({stack, app}: StackContext) {
             REGION: app.region,
             STAGE: stage
         },
+        buildCommand: stage !== "prod" ? "npm run dev" : "",
+        dev: {
+            deploy: stage !== "prod"
+        }
     });
 
     stack.addOutputs({
