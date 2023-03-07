@@ -15,7 +15,7 @@ export function WebsiteStack({stack, app}: StackContext) {
         },
         buildCommand: stage !== "prod" ? "npm run dev" : "",
         dev: {
-            deploy: stage !== "prod"
+            deploy: stage === "dev"
         }
     });
 
