@@ -20,8 +20,8 @@ jobs:
           fetch-depth: 1
 
       - name: Build docker image
-        run: docker build Dockerfile \
-          --build-arg ENV=${{ production }} --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+        run: docker build Dockerfile |
+          --build-arg ENV=${{ production }} --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} |
           --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -t sst:latest .
 
       - name: Run docker image
