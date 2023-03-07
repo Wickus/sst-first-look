@@ -25,9 +25,7 @@ jobs:
           node-version: 18.x
 
       - name: Build docker image
-        run: docker build \
-          --build-arg ENV=staging --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
-          --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -t sst:latest .
+        run: docker build --build-arg ENV=staging --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -t sst:latest .
 
       - name: Run docker image
         run: docker run -e ENV=staging -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
