@@ -1,6 +1,6 @@
 import {SSTConfig} from "sst";
-import {ExampleStack} from "./stacks/ExampleStack"
-import {Storage} from "./stacks/Storage";
+import {WebsiteStack} from "./stacks/WebsiteStack"
+import {SorageStack} from "./stacks/SorageStack";
 
 export default {
     config(_input) {
@@ -10,6 +10,6 @@ export default {
         };
     },
     stacks(app) {
-        app.stack(ExampleStack).stack(Storage)
+        app.stack(WebsiteStack).stack(SorageStack)
     },
 } satisfies SSTConfig;
