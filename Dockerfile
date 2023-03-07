@@ -9,22 +9,25 @@ RUN aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID && \
     aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY && \
     aws configure set default.region us-west-2
 
-WORKDIR /app
+WORKDIR /app/
 
-COPY package.json /app/
+COPY ./package.json /app/
+COPY ./packages/core/package.json /app/packages/core/
+COPY ./packages/functions/package.json /app/packages/functions
+COPY ./frontend/package.json /app/frontend/
 
 RUN npm install
-
 COPY . /app/
 
-RUN cd ./frontend
-
-COPY package.json /app/frontend/
-
+WORKDIR /app/packages/core/
 RUN npm install
 
-COPY . /app/frontend/
+WORKDIR /app/packages/functions/
+RUN npm install
 
-RUN cd ../
+WORKDIR /app/frontend/
+RUN npm install
 
-CMD ["npm","run","deploy"]
+WORKDIR /app/
+
+CMD 'npm run deploy'
