@@ -25,4 +25,4 @@ RUN npm install
 
 WORKDIR /app/
 
-CMD ["npm", "run", "deploy-$EVN"]
+CMD ["npm", "run", "deploy-production"]
