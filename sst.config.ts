@@ -6,7 +6,7 @@ export default {
     config(_input) {
         return {
             name: "nextjs-app",
-            region: "us-east-1",
+            region: "us-east-2",
         };
     },
     stacks(app) {
